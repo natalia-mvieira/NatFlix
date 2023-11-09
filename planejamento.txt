@@ -1,0 +1,19 @@
+- Homepage
+- Login e Criar Conta (Usuário e Autenticação)
+    - E-mail;
+    - Username;
+    - Senha;
+    - No banco de dados: filmes já vistos;
+- Editar Perfil;
+- Filmes/Séries:
+    - Thumb;
+    - Título;
+    - Descrição;
+    - Categoria;
+    - Quantidade de visualizações;
+    - Data de criação;
+    - Episódios:
+        - Título;
+        - Vídeos
+- Barra de Pesquisa.
+

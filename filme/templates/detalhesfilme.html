@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="py-10">
+    <h1>{{ object.titulo }}</h1>
+    <img src="{{ object.thumb.url }}">
+    <h2>Descrição:</h2>
+    <p>{{ object.descricao }}</p>
+</div>
+{% endblock %}
