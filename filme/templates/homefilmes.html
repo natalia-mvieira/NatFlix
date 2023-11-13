@@ -109,6 +109,7 @@ Início - NatFlix
         </div>
     </section>
 
+    {% if request.user.filmes_vistos.all|length > 0 %}
     <section class='bg-primary_black flex justify-center py-10'>
         <div class="p-8 w-10/12 relative" >
             <h2 class="text-gray-200 text-2xl font-medium">
@@ -128,7 +129,7 @@ Início - NatFlix
                   {% endfor %}
                     <a href="#section2visto" class="arrow__btn text-6xl">›</a>
               </section>
-              {% if request.user.filmes_vistos.all|length > 4%}
+              {% if request.user.filmes_vistos.all|length > 4 %}
               <section id="section2visto" class="flex flex-nowrap items-center justify-center">
                 <a href="#section1visto" class="arrow__btn text-6xl">‹</a>
                     {% for filme_visto in request.user.filmes_vistos.all %}
@@ -144,8 +145,9 @@ Início - NatFlix
               </section>
               {% endif %}
             </div>
-        </div>
+          </div>
     </section>
+  {% endif %}  
 </main>
 
 {% endblock %}
