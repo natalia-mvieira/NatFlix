@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, reverse_lazy
 from .views import HomePage, HomeFilmes, DetalhesFilme, Pesquisa, EditarPerfil, CriarConta
 from django.contrib.auth import views as auth_view
 app_name = 'filme' #para que os names do app filmes sejam diferenciados nas urls do projeto como um todo (namespace em natflix/urls.py)
@@ -10,6 +10,8 @@ urlpatterns = [
     path('pesquisa/', Pesquisa.as_view(), name='pesquisa'),
     path('login/', auth_view.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_view.LogoutView.as_view(template_name='logout.html'), name='logout'),
-    path('perfil/', EditarPerfil.as_view(), name='editarperfil'),
-    path('criarconta/', CriarConta.as_view(), name='criarconta')
+    path('perfil/<int:pk>', EditarPerfil.as_view(), name='editarperfil'),
+    path('criarconta/', CriarConta.as_view(), name='criarconta'),
+    path('senha/', auth_view.PasswordChangeView.as_view(template_name='editarperfil.html',
+                                                        success_url=reverse_lazy('filme:homefilmes')), name='senha')
 ]
